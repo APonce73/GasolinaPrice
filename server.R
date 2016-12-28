@@ -82,13 +82,13 @@ shinyServer(function(input, output) {
     ### para la figura
     names(newData)
     #LL <- ggplot(newData, aes(x = Metres, y = reorder(Mount_Cont, Metres)), size = 0.2) +
-    LL <- ggplot(newData, aes(x = Municipio.Zona, y = Gasolina.92 ), size = 0.7) +  
+    LL <- ggplot(newData, aes(x = Municipio.Zona, y = Gasolina.92 ), size = 1) +  
       # use a larger dot
       #geom_segment(aes(yend = Gasolina.92, colour = factor(Estado)), xend = 0) +
       geom_segment(aes(xend = Municipio.Zona, colour = factor(Estado)), yend = 0) +
       # plot the n points and color them
       geom_point(size = 1, color = "red") +
-      labs(title = "", y = "Precio", x = "Municipio/Zona") +
+      labs(title = "", y = "Precio, pesos mexicanos", x = "Municipio/Zona") +
       theme_bw() +  coord_flip()
     LL <- LL + theme(axis.text.x = element_text(size = 12,face = "bold"),
                      axis.text.y = element_text(size = 6,face = "bold"),
