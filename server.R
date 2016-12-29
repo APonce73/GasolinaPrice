@@ -52,10 +52,10 @@ shinyServer(function(input, output) {
   #  }else Tabla1 <- Tabla1
     
     #Por Region
-    if (input$Region != "All") {
-      TablaHH <- TablaHH[TablaHH$Region %in% input$Region,]
-    }else {TablaHH <- TablaHH
-    }
+#    if (input$Region != "All") {
+#      TablaHH <- TablaHH[TablaHH$Region %in% input$Region,]
+#    }else {TablaHH <- TablaHH
+#    }
     
     #Por Estado
     if (input$Estado != "All") {
@@ -112,13 +112,14 @@ shinyServer(function(input, output) {
       # plot the n points and color them
       geom_point(size = 1, color = "#298ae5") +
       labs(title = "", y = "Precio, pesos mexicanos", x = "Municipio/Zona") +
-      theme_bw() +
+      theme_bw() + 
       geom_hline(yintercept = 13.98, color = "black") +
       geom_hline(yintercept = 14.81, color = "red") +
       geom_hline(yintercept = 14.63, color = "green") +
       geom_hline(yintercept = 13.77, color = "black", linetype = "dashed") +
       geom_hline(yintercept = 13.97, color = "red", linetype = "dashed") +
       geom_hline(yintercept = 13.16, color = "green", linetype = "dashed")
+      #coord_flip()
     
     
     LL <- LL + theme(axis.text.x = element_text(size = 8,face = "bold", angle = 90),
@@ -129,7 +130,8 @@ shinyServer(function(input, output) {
                     panel.grid.minor.x = element_blank(),
                      panel.grid.major.x = element_blank(),
                      axis.title = element_text(size = 14,face = "bold")) +
-                     theme(legend.title = element_blank()) 
+                     theme(legend.title = element_blank())
+
       
     #LL
     #LL+geom_text(aes(label=newData$Mountain), 
