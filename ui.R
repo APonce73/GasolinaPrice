@@ -74,8 +74,8 @@ shinyUI(fluidPage(
       plotlyOutput("plot11", width = 1500, height = 1200),
       br(),
       br(),
-      #tableOutput('points11'),
-      tableOutput('TablaLL')
+      tableOutput('points11')
+      #tableOutput('TablaLL')
       
     )
 ))

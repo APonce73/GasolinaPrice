@@ -89,12 +89,12 @@ shinyServer(function(input, output) {
   )
 
     #Es un comprobador de resultados
-    output$TablaLL <- renderTable(
-      print(Katcha()))
+    #output$TablaLL <- renderTable(
+    #  print(Katcha()))
     
     #Es un comprobador de resultados
-    #output$points11 <- renderTable(
-    #  print(summary(points())))
+    output$points11 <- renderTable(
+      print(points()))
     
     
   

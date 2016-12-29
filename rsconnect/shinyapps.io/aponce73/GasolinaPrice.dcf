@@ -2,8 +2,8 @@ name: GasolinaPrice
 account: aponce73
 server: shinyapps.io
 appId: 147953
-bundleId: 663182
+bundleId: 663186
 url: https://aponce73.shinyapps.io/GasolinaPrice/
-when: 1482972750.85284
+when: 1482973081.2014
 asMultiple: FALSE
 asStatic: FALSE
