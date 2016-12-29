@@ -11,11 +11,14 @@ shinyUI(fluidPage(
   #Application title
   titlePanel("Precio de la Gasolina y Diesel a partir de enero 2017"),
   bootstrapPage(
-    h4("A partir de 2017, el precio de la gasolina será liberado en México. 
-        El aumento no será el mismo en cada estado, región y municipio. 
-        La Comisión Reguladora de Energía", tags$a(href = "http://www.gob.mx/cre", "CRE" ),
+    h4("A partir de enero del 2017, el precio de la gasolina será liberado en México. 
+        El aumento no será el mismo en cada estado, región y municipio."),
+       h4("La Comisión Reguladora de Energía", tags$a(href = "http://www.gob.mx/cre", "CRE" ),
         "ha establecido precios máximos para cada zona y área. Ésta visualización se realizó con los",
         tags$a(href = "http://www.gob.mx/cre/articulos/precios-maximos-de-combustibles-enero?idiom=es", "datos"), "del mismo sitio")), 
+       h4("Las líneas roja, verde y negra son el precio actual (Diciembre 2016), de la gasolina Premium, Magna y el Diésel respectivamente"),
+  h4("Finalmente, Las líneas roja, verde y negra de trazo (en inglés: dashed) son el precio de enero del 2016, de la gasolina Premium, Magna y el Diésel respectivamente"),
+      br(),
             
       #                                                   h4("Datos de las Regionales de ", tags$a(href = "http://www.conabio.gob.mx/", "Conabio"  ) ,"en Oaxaca, Chiapas
       #                      Tabasco, Campeche, Yucatán y Quintana Roo."),
@@ -38,9 +41,9 @@ shinyUI(fluidPage(
                   c("All", levels(Tabla1$Estado))),
       
       #Por Municipio/Zona
-  #    selectInput(inputId = "Municipio.Zona",
-  #                label = h6("Municipio/Zona:"),
-  #                c("All", levels(Tabla1$Municipio.Zona))),
+      selectInput(inputId = "Gazs",
+                  label = h6("Tipo de Gasolina:"),
+                  selected = c("Diésel"), choice = names(Tabla1[,6:8])),
   #    
       
       #checkboxGroupInput("Categorie", label = h6("Categorie (m):"),
@@ -68,6 +71,7 @@ shinyUI(fluidPage(
       plotlyOutput("plot11", width = 1500, height = 1200),
       br(),
       br(),
+      #tableOutput('points11'),
       tableOutput('TablaLL')
       
     )

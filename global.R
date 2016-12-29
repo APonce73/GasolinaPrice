@@ -25,6 +25,24 @@ summary(TablaH)
 Tabla1 <- TablaH
 
 summary(Tabla1)
+names(Tabla1)
+names(Tabla1)[6] <- c("Gas.menos.92")
+#names(Tabla1)[6] <- c("Gaz3")
+
+names(Tabla1)[7] <- c("Gas.mas.92")
+
+
+Gaz4 <- data.frame(Tabla1$Diésel)
+
+
+#Tabla1[Tabla1$Gas.más.92]
+
+#Gaz <- vector()
+
+#Tabla1 <- data.frame(Tabla1, Gaz)
+
+#names(Tabla1)[8] <- c("")
+
 ## create the ggplot data
 #Tabla2 <- Tabla1 %>%
 #  filter(Categorie == "8000" | Categorie == "7000")
